@@ -14,7 +14,11 @@ public class WebValueAdapter implements ValueAdapter {
     private HttpServletResponse response;
     private HttpSession session;
     
-    public void init(HttpServletRequest request, HttpServletResponse response) {
+    public WebValueAdapter() {
+        
+    }
+    
+    public WebValueAdapter(HttpServletRequest request, HttpServletResponse response) {
         this.request = request;
         this.session = request.getSession();
         this.response = response;

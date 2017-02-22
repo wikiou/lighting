@@ -28,5 +28,7 @@ public interface K {
     String request_ = "request_";
     String session_ = "session_";
     String cookie_ = "cookie_"; 
+
+    String flowTrace = "flowTrace";
     
 }
