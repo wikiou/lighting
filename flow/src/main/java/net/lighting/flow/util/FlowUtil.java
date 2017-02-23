@@ -7,5 +7,8 @@ public class FlowUtil {
         return s != null && s.trim().length() > 0;
     }
 
+    public static String getText(Object o) {
+        return o == null ? "" : o.toString().trim();
+    }
     
 }

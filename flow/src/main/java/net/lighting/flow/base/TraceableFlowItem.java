@@ -5,6 +5,8 @@ import net.lighting.flow.util.FlowUtil;
 
 public abstract class TraceableFlowItem implements FlowItem {
 
+    protected abstract void doExecute(ValueAdapter values);
+    
     @Override
     public void execute(ValueAdapter values) throws FlowException {
         String flowTrace = (String) values.get(K.flowTrace);

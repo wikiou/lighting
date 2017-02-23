@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.lighting.flow.base.ValueAdapter;
+import net.lighting.flow.util.FlowUtil;
 
 public class ThreadLocalValueAdapter implements ValueAdapter {
 
@@ -27,5 +28,10 @@ public class ThreadLocalValueAdapter implements ValueAdapter {
 		}
 		return dataMap;
 	}
+	
+	@Override
+    public String getText(String key) {
+        return FlowUtil.getText(get(key));
+    }
 	
 }
