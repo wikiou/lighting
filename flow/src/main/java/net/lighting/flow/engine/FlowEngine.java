@@ -1,17 +1,17 @@
 package net.lighting.flow.engine;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import net.lighting.flow.base.FlowItem;
 import net.lighting.flow.base.ValueAdapter;
 import net.lighting.flow.exception.FlowException;
+import net.lighting.flow.factory.XmlFlowFactory;
 
 public class FlowEngine {
 
     private ValueAdapter valueAdapter;
     
-    private Map<String, FlowItem> flowMap = new HashMap<String, FlowItem>();
+    private Map<String, FlowItem> flowMap;
     
     public FlowEngine() {
         
@@ -23,7 +23,11 @@ public class FlowEngine {
         this.valueAdapter = valueAdapter;
     }
     
-    public void setValueAdapter(ValueAdapter valueAdapter) {
+    public void setFlowFactory(XmlFlowFactory flowFactory) {
+    	flowMap = flowFactory.getFlowMap();
+	}
+
+	public void setValueAdapter(ValueAdapter valueAdapter) {
         this.valueAdapter = valueAdapter;
     }
 
